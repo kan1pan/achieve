@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+
+        <h1>お問い合わせ画面</h1>
+
+        <%=form_for(@contact, url:confirm_contacts_path) do |contact| %>
+            <% if @contact.errors.any? %>
+                <div id="error_explanation">
+                    <h2><%= @contact.errors.count %>件のエラーがあります。</h2>
+                    <ul>
+                        <% @contact.errors.full_messages.each do |msg| %>
+                            <li><%= msg %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            <% end %>
+
+            <%=contact.label :名前 %>
+            <%=contact.text_field :name, class: 'form-control' %>
+            <br>
+            <%=contact.label :メールアドレス %>
+            <%=contact.text_field :email, class: 'form-control' %>
+            <br>
+            <%=contact.label :内容 %>
+            <%=contact.text_field :content, class: 'form-control' %>
+            <br>
+            <%=contact.submit '次へ' , class:'btn btn-primary btn-block' %>
+        <% end %>
+    </div>
+</div>
