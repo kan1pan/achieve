@@ -8,11 +8,12 @@
 # end
 
 n = 1
+id = 1
 while n <= 100
   Blog.create(
     title: "あああ",
     content: "hoge",
-    user_id: n
+    user_id: id
   )
   n = n + 1
 end
