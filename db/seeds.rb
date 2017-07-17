@@ -8,12 +8,19 @@
 # end
 
 n = 1
-id = 1
+email = Faker::Internet.email
+user = User.create(
+  name: "テスト太郎",
+  email: email,
+  password: "123456",
+  password_confirmation: "123456"
+)
+
 while n <= 100
   Blog.create(
     title: "あああ",
     content: "hoge",
-    user_id: id
+    user_id: user.id
   )
   n = n + 1
 end
