@@ -3,9 +3,6 @@ class BlogsController < ApplicationController
   before_action :set_blog, only:[:edit, :update, :destroy]
 
   def index
-    # @blogs = Blog.all
-    # @users = User.all
-    @blogs = Blog.find(current_user.id)
     @users = User.find(current_user.id)
 
   end
