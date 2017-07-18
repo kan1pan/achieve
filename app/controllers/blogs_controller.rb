@@ -3,7 +3,7 @@ class BlogsController < ApplicationController
   before_action :set_blog, only:[:edit, :update, :destroy]
 
   def index
-    @users = User.find(current_user.id)
+    @blogs = Blog.all
 
   end
 
