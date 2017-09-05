@@ -44,3 +44,12 @@ input[type="submit"].btn-block{
       opacity: 0.7;
     }
 }
+
+.img-val {
+  max-width: 10%;
+  img {
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+  }
+}

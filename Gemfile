@@ -55,6 +55,7 @@ gem 'faker'
 
 group :development do
   gem 'letter_opener_web'
+  gem 'dotenv-rails'
 end
 
 gem 'rails_admin'
@@ -69,3 +70,10 @@ end
 gem 'activeresource'
 
 gem 'her'
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+
+gem 'carrierwave'
+gem 'mini_magick'
