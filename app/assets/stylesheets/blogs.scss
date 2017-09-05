@@ -45,11 +45,7 @@ input[type="submit"].btn-block{
     }
 }
 
-.img-val {
+.img-val > img {
   max-width: 10%;
-  img {
-    border-radius: 100px;
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
-  }
+  border-radius: 100px;
 }
