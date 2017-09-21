@@ -52,7 +52,7 @@ class User < ActiveRecord::Base
       super
     else
       params.delete :current_password
-      update_with_password(params, *options)
+      update_without_password(params, *options)
     end
   end
 
