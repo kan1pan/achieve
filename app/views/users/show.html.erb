@@ -4,34 +4,38 @@
     <div class="container-child col-md-12 col-sm-12 col-xs-12" >
       <h2>フォロー一覧</h2>
       <% @followeds.each do |followed| %>
-        <div class="row">
-          <div class="container-child col-md-2 col-sm-4 col-xs-6">
-            <div class="follow">
-              <div class="left">
-                <%= profile_img(followed) %>
-                <%= followed.name %>
+        <% if followed.id != current_user.id %>
+          <div class="row">
+            <div class="container-child col-md-2 col-sm-4 col-xs-6">
+              <div class="follow">
+                <div class="left">
+                  <%= profile_img(followed) %>
+                  <%= followed.name %>
+                </div>
               </div>
             </div>
+            <div class="right"><%= render 'follow_form', user: followed %></div>
           </div>
-          <div class="right"><%= render 'follow_form', user: followed %></div>
-        </div>
+        <% end %>
       <% end %>
     </div>
 
     <div class="container-child col-md-12 col-sm-12 col-xs-12" >
       <h2>フォロワー一覧</h2>
       <% @followers.each do |follower| %>
-      <div class="row">
-        <div class="container-child col-md-2 col-sm-4 col-xs-6">
-          <div class="follow">
-            <div class="left">
-              <%= profile_img(follower) %>
-              <%= follower.name %>
+        <% if follower.id != current_user.id %>
+          <div class="row">
+            <div class="container-child col-md-2 col-sm-4 col-xs-6">
+              <div class="follow">
+                <div class="left">
+                  <%= profile_img(follower) %>
+                  <%= follower.name %>
+                </div>
+              </div>
             </div>
+            <div class="right"><%= render 'follow_form', user: follower %></div>
           </div>
-        </div>
-        <div class="right"><%= render 'follow_form', user: follower %></div>
-      </div>
+        <% end %>
       <% end %>
     </div>
 
