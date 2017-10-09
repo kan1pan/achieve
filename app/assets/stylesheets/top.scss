@@ -116,6 +116,7 @@ footer {
     z-index: 20;
     a {
         display: block;
+        padding-left: 23px;
         color: white;
         line-height: 60px;
         text-decoration: none;
@@ -128,4 +129,12 @@ footer {
 .flash {
     color: white;
     padding-top: 10px;
+}
+
+a i {
+  padding-top: 18px;
+  color: #ccc;
+  &:hover, &:focus {
+    color: white;
+  }
 }
