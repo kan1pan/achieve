@@ -10,9 +10,10 @@
                       <h4><strong><%= blog.title %></strong></h4>
                     <% end %>
                     <p><%= blog.content %></p>
-                    <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default btn-sm btn-success' %>
-                    <%= link_to "削除", blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
-
+                    <% if current_user.id == blog.user.id %>
+                      <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default btn-sm btn-success' %>
+                      <%= link_to "削除", blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+                    <% end %>
                     <p><%= blog.user.name %></p>
                 </div>
             <% end %>
