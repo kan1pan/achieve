@@ -2,10 +2,13 @@ cnt = 0
 100.times do |n|
   email = Faker::Internet.email
   password = "password"
+  uid = SecureRandom.uuid
   User.create!(email: email,
               password: password,
               password_confirmation: password,
-              name: "test" + cnt.to_s
+              name: "test" + cnt.to_s,
+              uid: uid,
+              confirmed_at: Time.now
               )
   cnt += 1
 end
